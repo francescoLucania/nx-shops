@@ -1,0 +1,12 @@
+<article class="book-card" [ngClass]="{'book-card--disable': bookInfo.ageRating}">
+  <div class="book-card__image">
+    <img [src]="bookInfo.src" [srcset]="bookInfo.srcset" [alt]="">
+  </div>
+  <header class="book-card__header">
+    <div class="book-card__author">
+      <a [routerLink]="'books/' + bookInfo.id">{{ bookInfo.author }}</a>
+    </div>
+    <h3 class="heading-h5"><a [queryParams]="{ageRating: bookInfo.ageRating}" [routerLink]="'/books/' + bookInfo.id">{{ bookInfo.title }}</a></h3>
+  </header>
+</article>
+

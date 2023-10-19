@@ -1,0 +1,9 @@
+
+<div class="catalog">
+  <div class="catalog__grid">
+    <div *ngFor="let item of books" class="catalog__grid-column">
+      <book-shop-book-card [bookInfo]="item">
+      </book-shop-book-card>
+    </div>
+  </div>
+</div>

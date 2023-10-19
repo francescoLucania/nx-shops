@@ -1,0 +1,9 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.popular {
+  margin-top: 48px;
+
+  @include theme.mq(md) {
+    margin-top: 64px;
+  }
+}

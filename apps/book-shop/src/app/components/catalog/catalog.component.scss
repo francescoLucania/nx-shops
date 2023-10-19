@@ -1,0 +1,18 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.catalog {
+  &__grid {
+    @include theme.mq(md) {
+      @include theme.grid;
+      margin-bottom: -32px;
+    }
+  }
+
+  &__grid-column {
+    @include theme.mq(md) {
+      @include theme.grid-col-mx(1/4);
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+  }
+}

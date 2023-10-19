@@ -1,0 +1,100 @@
+@forward 'node_modules/normalize.css/normalize';
+@forward 'assets/styles/fonts';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/palette/palette';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
+
+$colorBase: #121314 !default;
+$colorLight: rgba(#121314, 0.8) !default;
+$colorLighter: rgba(#121314, 0.6) !default;
+$colorLightest: rgba(#121314, 0.4) !default;
+
+$colorBrand: #5409ff !default;
+$colorSound: #9280bc !default;
+$colorSoundLight: rgba(#9280bc, 0.6) !default;
+$colorSound: #9280bc !default;
+$bgColorMode: #F9F8F3 !default;
+
+$colorError: red !default;
+
+$accessibilityBorder: #9b3be5 !default;
+$accessibilityBackground: #fef0cc !default;
+
+:root {
+  --colorBase: #{$colorBase};
+  --colorLight: #{$colorLight};
+  --colorLighter: #{$colorLighter};
+  --colorLightest: #{$colorLightest};
+
+  --colorBrand: #{$colorBrand};
+  --colorSound: #{$colorSound};
+  --colorSoundLight: #{$colorSoundLight};
+  --bgColorMode: #{$bgColorMode};
+
+  --accessibilityBorder: #{$accessibilityBorder};
+  --accessibilityBackground: #{$accessibilityBackground};
+
+  --colorError: #{$colorError};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bgColorMode);
+  color: var(--colorBase);
+  font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+  transition: background-color 0.6s, padding-top 0.6s;
+  will-change: padding-top;
+
+  .app {
+    min-height: calc(100vh - 80px);
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+ul,
+ol {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}

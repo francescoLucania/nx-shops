@@ -1,0 +1,66 @@
+[
+  {
+    "id": "hh23423i823",
+    "title": "Приключения Тома Сойера: повесть",
+    "author": "Марк Твен",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/22/234/2223449.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/22/234/2223449.jpg 2x",
+    "ageRating": false
+  },
+  {
+    "id": "hh3tdwud27ey21uheqwkjheqwi823",
+    "title": "Парфюмер. История одного убийцы",
+    "author": "Патрик Зюскинд",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/20/952/2095272.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/20/952/2095272.jpg 2x",
+    "ageRating": true
+  },
+  {
+    "id": "hh3tdwud2213heqwi823",
+    "title": "Невыносимая легкость бытия",
+    "author": "Милан Кундера",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/14/587/1458706.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/14/587/1458706.jpg 2x",
+    "ageRating": false
+  },
+  {
+    "id": "hh3td21231242354wud2213heqwi823",
+    "title": "Белый Клык",
+    "author": "Джек Лондон",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/22/321/2232156.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/22/321/2232156.jpg 2x",
+    "ageRating": false
+  },
+  {
+    "id": "hh3td212123231242354wud2213heqwi823",
+    "title": "Аид. История повелителя Подземного мира",
+    "author": "Серена Валентино",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/29/810/2981017.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/29/810/2981017.jpg 2x",
+    "ageRating": false
+  },
+  {
+    "id": "hh3td2121wew23231242354wud2213heqwi823",
+    "title": "Друзья, любимые и одна большая ужасная вещь. Автобиография",
+    "author": "Мэттью Перри",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/30/015/3001530-2.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/30/015/3001530-2.jpg 2x",
+    "ageRating": true
+  },
+  {
+    "id": "hh3t33333454wud2213heqwi823",
+    "title": "Чебурашка. Официальная новеллизация",
+    "author": "Анна Маслова",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/29/575/2957574_2.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/29/575/2957574_2.jpg 2x",
+    "ageRating": false
+  },
+  {
+    "id": "hh3td212weeeerr45123231242354wud2213heqwi823",
+    "title": "Не отпускай меня : роман",
+    "author": "Кадзуо Исигуро",
+    "src": "https://cdn.img-gorod.ru/310x500/nomenclature/22/146/2214660.jpg",
+    "srcset": "https://cdn.img-gorod.ru/620x1000/nomenclature/22/146/2214660.jpg 2x",
+    "ageRating": true
+  }
+]

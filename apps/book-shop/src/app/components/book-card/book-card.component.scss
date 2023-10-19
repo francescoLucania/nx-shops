@@ -1,0 +1,65 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/_typography' as typography;
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.book-card {
+  position: relative;
+  text-align: center;
+  margin: 0 -12px;
+
+  &:hover {
+    .book-card__image {
+      border-radius: 24px;
+    }
+  }
+
+  &--disable {
+    .book-card__image img {
+      overflow: hidden;
+      filter: blur(24px);
+    }
+  }
+
+  &__image {
+    padding: 24px;
+    height: 280px;
+    background: #EEEDE4;
+    transition: border-radius .2s;
+
+    @include theme.mq(md) {
+      height: 420px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      vertical-align: top;
+    }
+  }
+
+  &__header {
+    margin-top: 12px;
+
+    a {
+      color: var(--colorBase);
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__author {
+    @include typography.text-base-small;
+
+    margin-bottom: 4px;
+    font-style: italic;
+    font-weight: 700;
+  }
+}

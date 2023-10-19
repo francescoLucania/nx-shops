@@ -1,0 +1,39 @@
+<header class="site-header">
+  <div class="container">
+
+
+
+    <nav class="site-header__navigate">
+      <div class="site-header__logo"><span class="color-brand">book</span>seller</div>
+
+      <div class="site-header__user-menu" >
+        <ng-container *ngIf="(user$ | async) as user; else userMenu">
+          <neo-ui-button>
+            {{ user.name }}
+          </neo-ui-button>
+        </ng-container>
+        <ng-template #userMenu>
+          <neo-ui-button
+            [theme]="'brand'"
+            [size]="'large'"
+            [openModalFromTemplate]="loginModal"
+            [modalTitle]="'Войти'"
+          >
+            Войти
+          </neo-ui-button>
+          <ng-template #loginModal>
+            <div class="login">
+              <div class="login-item mt-8" *ngFor="let item of authMethods$ | async">
+                <neo-ui-button [fullWidth]="true" [theme]="'secondary'" [link]="'https://esiang-client-dev.test.gosuslugi.ru' + item.url"> {{ item.text }} </neo-ui-button>
+              </div>
+            </div>
+          </ng-template>
+        </ng-template>
+
+      </div>
+    </nav>
+
+
+
+  </div>
+</header>

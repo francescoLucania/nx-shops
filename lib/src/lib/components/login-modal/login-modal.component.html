@@ -1,0 +1,11 @@
+<div class="login">
+  <ng-container *ngIf="authMethods; else error">
+    <h5 class="heading-h4 mb-16" [innerHTML]="title"></h5>
+    <div class="login-item mt-8" *ngFor="let item of authMethods">
+      <neo-ui-button [fullWidth]="true" [theme]="'brand'" [link]="'https://esiang-client-dev.test.gosuslugi.ru' + item.url"> {{ item.text }} </neo-ui-button>
+    </div>
+  </ng-container>
+  <ng-template #error>
+    <h5 class="heading-h4"><span class="color-brand">=(</span> Сервис не отвечает, попробуйте позже</h5>
+  </ng-template>
+</div>
