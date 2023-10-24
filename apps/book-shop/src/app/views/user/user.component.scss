@@ -1,0 +1,64 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+label {
+  display: block;
+  color: var(--colorBrand);
+}
+
+.user-card {
+  margin-top: 48px;
+  padding: 24px;
+  border-radius: 24px;
+  background: #EEEDE4;
+
+  @include theme.mq(md) {
+    margin-top: 64px;
+  }
+
+  &__grid {
+    @include theme.mq(md) {
+      display: flex;
+    }
+  }
+
+  &__image-block {
+    @include theme.mq(sm) {
+      margin: 0 auto;
+      width: 180px;
+    }
+
+    @include theme.mq(md) {
+      width: 280px;
+      margin-right: 32px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 50%;
+      vertical-align: top;
+    }
+  }
+
+  &__info-block {
+    @include theme.mq(md) {
+      flex-grow: 1;
+    }
+  }
+}
+
+.edit-actions {
+  @include theme.mq(md) {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @include theme.mq(md) {
+        margin-right: 16px;
+      }
+    }
+  }
+}

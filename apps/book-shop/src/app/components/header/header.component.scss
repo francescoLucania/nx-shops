@@ -16,10 +16,16 @@
   &__logo {
     text-align: center;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 1;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
+    color: var(--colorBase);
+
+    @include theme.mq(sm) {
+      font-size: 18px;
+    }
+
   }
 
   &__navigate-logo {

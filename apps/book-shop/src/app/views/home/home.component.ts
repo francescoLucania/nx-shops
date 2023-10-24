@@ -2,10 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {ButtonModule} from "ngx-neo-ui";
 import {BooksService} from "../../services/books.service";
 import {CatalogComponent} from "../../components/catalog/catalog.component";
+import {HomePromoComponent} from "../../components/home-promo/home-promo.component";
 
 @Component({
   standalone: true,
-  imports: [ButtonModule, CatalogComponent],
+  imports: [ButtonModule, CatalogComponent, HomePromoComponent],
   selector: 'book-shop-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

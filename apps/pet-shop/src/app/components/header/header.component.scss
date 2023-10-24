@@ -1,0 +1,180 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography' as typography;
+
+.toolbar {
+  background: var(--colorBase);
+  color: var(--bgColorMode);
+
+  &__body {
+    padding: 16px 0;
+    @include theme.mq(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__navigate {
+    @include theme.mq(lg) {
+      display: flex;
+    }
+  }
+
+  &__info {
+    @include theme.mq(md) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    a {
+      color: var(--bgColorMode);
+      font-weight: 700;
+
+      &:hover {
+        color: var(--colorSound);
+      }
+    }
+  }
+
+  &__info-item {
+    &:not(:last-child) {
+      @include theme.mq(md) {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__navigate-item {
+
+    &:not(:last-child) {
+      @include theme.mq(lg) {
+        margin-right: 8px;
+      }
+    }
+
+    > a,
+    > button {
+      color: var(--bgColorMode);
+
+      &:hover {
+        color: var(--colorSound);
+      }
+    }
+  }
+}
+
+
+
+.site-header {
+  padding: 24px 0;
+
+  &__navigate {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user-menu {
+    display: flex;
+    margin-left: auto;
+    height: 56px;
+  }
+
+  &__catalog-button-group {
+    @include typography.text-base-large(700);
+    display: flex;
+    align-items: stretch;
+    background: var(--colorBase);
+
+    &:hover {
+      background: var(--colorBrand);
+    }
+  }
+
+  &__catalog-button-title {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    color: var(--bgColorMode);
+  }
+
+  &__catalog-button {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    font-size: 0;
+    line-height: 0;
+
+    > span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: 2px;
+      background: var(--bgColorMode);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bgColorMode);
+      }
+
+      &::before {
+        margin-top: -8px;
+      }
+
+      &::after {
+        margin-top: 8px;
+      }
+
+    }
+  }
+
+  &__user-menu-login {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user-menu-button {
+    @include typography.text-base-large(700);
+    padding: 0 24px;
+    color: var(--colorBase);
+
+    &:hover {
+      color: var(--colorBrand);
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: 32px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--colorBrand);
+
+    &::before {
+      content: "";
+      display: block;
+      margin-right: 8px;
+      width: 48px;
+      height: 48px;
+      background: var(--colorBrand);
+    }
+
+    &:hover {
+      color: var(--colorSound);
+    }
+
+    @include theme.mq(sm) {
+
+    }
+
+  }
+}

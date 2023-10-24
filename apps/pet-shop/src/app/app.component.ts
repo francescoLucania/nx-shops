@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import {HeaderComponent} from "./components/header/header.component";
+import {HttpClientModule} from "@angular/common/http";
+import {ModalModule} from "ngx-neo-ui";
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, HeaderComponent, HttpClientModule, ModalModule],
   selector: 'angular-monorepo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

@@ -1,0 +1,45 @@
+<div class="toolbar text-base-small">
+  <div class="container">
+    <div class="toolbar__body">
+      <ul class="toolbar__navigate">
+        <li class="toolbar__navigate-item"><a href="#">О Компании</a></li>
+        <li class="toolbar__navigate-item"><a href="#">Доставка и оплата</a></li>
+        <li class="toolbar__navigate-item"><a href="#">Наши магазины</a></li>
+        <li class="toolbar__navigate-item"><a href="#">Статьи</a></li>
+        <li class="toolbar__navigate-item"><a href="#">Вопросы и ответы</a></li>
+        <li class="toolbar__navigate-item"><a href="#">Контакты</a></li>
+      </ul>
+
+      <ul class="toolbar__info">
+        <li class="toolbar__info-item">пн-пт 9:00 - 19:00 сб 9:00 - 16:00 вс выходной</li>
+        <li class="toolbar__info-item"><a href="tel:89107844802">8 (495) 565-35-85</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__navigate">
+      <a routerLink="/" class="site-header__logo">
+        PET-SHOP.RU
+      </a>
+      <div class="site-header__user-menu">
+        <div class="site-header__user-menu-login">
+          <ng-container *ngIf="(user$ | async) as user; else userMenu">
+            <button type="button" class="site-header__user-menu-button" [routerLink]="'/user'">{{ user.name || user.id }}</button>
+          </ng-container>
+          <ng-template #userMenu>
+            <button type="button" class="site-header__user-menu-button" (click)="openLoginModal()">Войти</button>
+          </ng-template>
+        </div>
+        <button type="button" class="site-header__catalog-button-group">
+          <span class="site-header__catalog-button-title">Каталог</span>
+         <span class="site-header__catalog-button">
+            Открыть
+         <span></span>
+        </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
