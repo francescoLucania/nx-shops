@@ -4,9 +4,8 @@ import {
   withEnabledBlockingInitialNavigation,
 } from '@angular/router';
 import { appRoutes } from './app.routes';
-import {HTTP_INTERCEPTORS, provideHttpClient} from "@angular/common/http";
-import {AuthorizedRequestInterceptor} from "./interceptor/authorized-request.interceptor";
-import {API_CONFIG, UserService} from "@nx-shops/lib";
+import {provideHttpClient, withInterceptors} from "@angular/common/http";
+import {API_CONFIG, authInterceptor, UserService} from "@nx-shops/lib";
 import {environment} from "../environments/environment";
 
 const apiConfig = {
@@ -19,7 +18,9 @@ export function initializerFactory(userService: UserService) {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthorizedRequestInterceptor, multi: true },
+    provideHttpClient(
+      withInterceptors([ authInterceptor ]),
+    ),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
     provideHttpClient(),
     {

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Observable} from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {distinctUntilChanged, Observable, tap} from "rxjs";
 import {IAuthMethod, IUser, LoginModalComponent, UserService} from "@nx-shops/lib";
 import {ModalService} from "ngx-neo-ui";
 import {CommonModule} from "@angular/common";
@@ -15,7 +15,14 @@ import {HttpClientModule} from "@angular/common/http";
 
 })
 export abstract class AuthUserComponent {
-  public user$: Observable<null | IUser> = this.userService.user$;
+  public user$: Observable<null | IUser> = this.userService.user$.pipe(
+    distinctUntilChanged(),
+    tap((user) => {
+      if (!user) {
+        this.userService.getAuthMethods();
+      }
+    })
+  );
   public authMethods$: Observable<null | IAuthMethod[]> = this.userService.authMethods$;
 
   constructor(

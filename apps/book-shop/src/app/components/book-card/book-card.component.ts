@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-import {UserComponent} from "../../views/user/user.component";
 import {UserService} from "@nx-shops/lib";
 
 @Component({

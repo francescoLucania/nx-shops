@@ -6,7 +6,7 @@ import {UserService} from "@nx-shops/lib";
 import {ButtonModule, ModalService} from "ngx-neo-ui";
 
 @Component({
-  selector: 'angular-monorepo-header',
+  selector: 'pet-shop-header',
   standalone: true,
   imports: [CommonModule, RouterModule, ButtonModule],
   templateUrl: './header.component.html',

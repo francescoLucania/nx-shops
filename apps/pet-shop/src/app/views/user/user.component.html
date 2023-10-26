@@ -1,0 +1,66 @@
+<section>
+  <div class="container">
+    <div class="user-card">
+      <div class="user-card__grid">
+        <div class="user-card__image-block">
+          <div class="user-card__image">
+            <img src="/assets/images/img.png" alt="Avatar">
+          </div>
+        </div>
+        <form class="user-card__info-block" (ngSubmit)="save()" [formGroup]="form">
+          <div>
+            <label for="" class="mb-8"><b>ID:</b></label>
+            <neo-ui-input formControlName="id"  [disabled]="true"></neo-ui-input>
+          </div>
+          <div class="mt-32">
+            <label for="" class="mb-8"><b>Логин:</b></label>
+            <neo-ui-input formControlName="login" [invalid]="!login?.value?.length" [disabled]="!editState"></neo-ui-input>
+          </div>
+          <div class="mt-32" *ngIf="user">
+            <label for="" class="mb-8"><b>Возраст: </b></label>
+            <div><b>{{form.get('age')?.value}}</b></div>
+          </div>
+
+          <div class="mt-32" *ngIf="user">
+            <ng-container *ngIf="!editState; else editingActions">
+
+              <div class="edit-actions">
+                <div class="edit-actions__item">
+                  <neo-ui-button [theme]="'brand'"  (click)="changeState()">
+                    Редактировать
+                  </neo-ui-button>
+
+                </div>
+                <div class="edit-actions__item">
+                  <neo-ui-button [fullWidth]="true" [disabled]="loading" (click)="logout()">
+                    Выйти
+                  </neo-ui-button>
+                </div>
+              </div>
+
+
+
+            </ng-container>
+            <ng-template #editingActions>
+
+              <div class="edit-actions">
+                <div class="edit-actions__item">
+                  <neo-ui-button [fullWidth]="true" [theme]="'secondary'" [disabled]="loading" (click)="changeState()">
+                    Отмена
+                  </neo-ui-button>
+                </div>
+                <div class="edit-actions__item">
+                  <neo-ui-button [fullWidth]="true" [disabled]="loading" [buttonType]="'submit'">
+                    Сохранить
+                  </neo-ui-button>
+                </div>
+              </div>
+
+
+            </ng-template>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

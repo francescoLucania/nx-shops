@@ -2,8 +2,8 @@
 @forward 'assets/styles/fonts';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';
-@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/palette/palette';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/palette/palette';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
 @use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/resets/button' as button-reset;
 
@@ -13,10 +13,30 @@ $colorLighter: rgba(#121314, 0.6) !default;
 $colorLightest: rgba(#121314, 0.4) !default;
 
 $colorBrand: #c81428 !default;
-$colorFade: rgba($colorBrand, 0.6) !default;
+$colorFade: rgba($colorBrand, 0.2) !default;
 $colorSound: #c2aa44 !default;
 $colorSoundLight: rgba($colorBrand, 0.6) !default;
 $bgColorMode: #fcfeff !default;
+
+$borderRadiusSmall: 0;
+$borderRadiusBase: 2px;
+$borderRadiusLarge: 4px;
+
+$transitionSmall: .2s;
+$transitionBase: .4s;
+$transitionLarge: .8s;
+
+// neo-ui-input
+$inputBorderWidth: 1px;
+$inputBorderRadius: 0;
+$inputBackgroundBase: #fff;
+$inputColorBase: #fff;
+
+// neo-ui-button
+$buttonBorderWidth: 3px;
+$buttonBorderRadius: 0;
+$buttonBackgroundBase: $colorBase;
+$buttonColorBase: #fff;
 
 $colorError: red !default;
 
@@ -30,10 +50,23 @@ $accessibilityBackground: #fef0cc !default;
   --colorLightest: #{$colorLightest};
 
   --colorBrand: #{$colorBrand};
-  --colorFade: #{$colorBrand};
+  --colorFade: #{$colorFade};
   --colorSound: #{$colorSound};
   --colorSoundLight: #{$colorSoundLight};
   --bgColorMode: #{$bgColorMode};
+
+  // neo-ui-input
+  --inputBorderWidth: #{$inputBorderWidth};
+  --inputBorderRadius: #{$inputBorderRadius};
+  --inputBackgroundBase: #{$inputBackgroundBase};
+  --inputColorBase: #{$inputColorBase};
+  --inputTransition: #{$transitionSmall};
+
+  // neo-ui-button
+  --buttonBorderWidth: #{$buttonBorderWidth};
+  --buttonBorderRadius: #{$buttonBorderRadius};
+  --buttonBackgroundBase: #{$buttonBackgroundBase};
+  --buttonTransition: #{$transitionSmall};
 
   --accessibilityBorder: #{$accessibilityBorder};
   --accessibilityBackground: #{$accessibilityBackground};
@@ -59,14 +92,35 @@ body {
   background: var(--bgColorMode);
   color: var(--colorBase);
   font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
-  transition: background-color 0.6s, padding-top 0.6s;
-  will-change: padding-top;
-
-  .app {
-    min-height: calc(100vh - 80px);
-  }
+}
+body,
+pet-shop-root {
+  min-height: 100vh;
 }
 
+pet-shop-root {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+}
+
+pet-shop-header {
+  grid-area: header;
+  height: content-box;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+}
+
+pet-shop-footer {
+  grid-area: footer;
+  height: content-box;
+}
 
 h1,
 h2,
@@ -106,3 +160,11 @@ ol {
   padding-inline-start: 0;
 }
 
+.app {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+}

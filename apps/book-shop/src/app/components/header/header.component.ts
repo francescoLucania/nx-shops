@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ButtonModule, ModalModule, ModalService} from "ngx-neo-ui";
 import {Observable} from "rxjs";
-import {AutoUnsub, IAuthMethod, IUser, LoginModalComponent, UserService} from "@nx-shops/lib";
+import {IAuthMethod, IUser, LoginModalComponent, UserService} from "@nx-shops/lib";
 import {RouterModule} from "@angular/router";
 
 @Component({
@@ -12,7 +12,7 @@ import {RouterModule} from "@angular/router";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-@AutoUnsub()
+
 export class HeaderComponent {
 
   public user$: Observable<null | IUser> = this.userService.user$;

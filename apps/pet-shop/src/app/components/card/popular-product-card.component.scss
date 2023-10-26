@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  &__header {
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    position: relative;
+    height: 320px;
+
+    > img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: calc(100% - 32px);
+      max-height: calc(100% - 32px);
+      vertical-align: top;
+    }
+  }
+
+  &__title {
+    a {
+      color: var(--colorBase);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: "";
+        z-index: 99;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__footer {
+    z-index: 100;
+    position: relative;
+    margin-top: auto;
+  }
+}

@@ -53,10 +53,9 @@ export class UserService {
     if (apiConfig.apiBaseUrl) {
       this.apiBaseUrl = apiConfig.apiBaseUrl;
     }
-    this.getAuthMethods();
   }
 
-  private getAuthMethods(): void {
+  public getAuthMethods(): void {
     this.http.get<IAuthMethod[]>(`${this.apiBaseUrl}api/auth`)
       .subscribe({
         next: ( response: IAuthMethod[]) => {
@@ -74,9 +73,6 @@ export class UserService {
 
   public logout(): Observable<any> {
     return this.http.get(`${this.apiBaseUrl}api/auth/logout`).pipe(
-      // catchError(()=> {
-      //   return of(null)
-      // }),
       switchMap(() => this.getUser())
     )
   }

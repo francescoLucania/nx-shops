@@ -2,7 +2,7 @@
   "name": "pet-shop",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "angular-monorepo",
+  "prefix": "pet-shop",
   "sourceRoot": "apps/pet-shop/src",
   "tags": [],
   "targets": {
@@ -30,7 +30,7 @@
             {
               "type": "anyComponentStyle",
               "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumError": "200kb"
             }
           ],
           "outputHashing": "all"

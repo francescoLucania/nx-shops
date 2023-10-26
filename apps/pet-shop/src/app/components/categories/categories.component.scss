@@ -1,0 +1,105 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.catalog {
+
+  &__grid {
+    @include theme.mq(md) {
+      @include theme.grid;
+
+      align-items: stretch;
+    }
+  }
+
+  &__grid-col {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    @include theme.mq(md) {
+      @include theme.grid-col-mx(calc(1 / 2));
+      margin-bottom: 24px;
+    }
+
+    @include theme.mq(md) {
+      margin-bottom: 32px;
+    }
+
+    &--3-10 {
+      @include theme.mq(lg) {
+        @include theme.grid-col-mx(calc(3 / 10))
+      }
+    }
+
+    &--2-10 {
+      @include theme.mq(lg) {
+        @include theme.grid-col-mx(calc(2 / 10))
+      }
+    }
+
+    &--4-10 {
+      @include theme.mq(lg) {
+        @include theme.grid-col-mx(calc(4 / 10))
+      }
+    }
+
+    &--1-2 {
+      @include theme.mq(lg) {
+        @include theme.grid-col-mx(calc(1 / 2))
+      }
+    }
+  }
+
+  &__col-container {
+    position: relative;
+    height: 200px;
+    border-radius: 8px;
+    background: var(--colorSound);
+
+    > img {
+      z-index: 0;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      @include theme.mq(sm) {
+        max-width: 60%;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__col-container-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+
+    @include theme.mq(md) {
+      padding: 24px;
+    }
+  }
+
+  &__col-container-title {
+    z-index: 99;
+    position: static;
+    a {
+      color: #fff;
+
+      &::after {
+        content: "";
+        z-index: 99;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}

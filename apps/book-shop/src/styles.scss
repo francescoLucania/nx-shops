@@ -17,6 +17,26 @@ $colorSoundLight: rgba(#9280bc, 0.6) !default;
 $colorSound: #9280bc !default;
 $bgColorMode: #F9F8F3 !default;
 
+$borderRadiusSmall: 0;
+$borderRadiusBase: 2px;
+$borderRadiusLarge: 4px;
+
+$transitionSmall: .2s;
+$transitionBase: .4s;
+$transitionLarge: .8s;
+
+// neo-ui-input
+$inputBorderWidth: 1px;
+$inputBorderRadius: 0;
+$inputBackgroundBase: #fff;
+$inputColorBase: #fff;
+
+// neo-ui-button
+$buttonBorderWidth: 3px;
+$buttonBorderRadius: 0;
+$buttonBackgroundBase: $colorBase;
+$buttonColorBase: #fff;
+
 $colorError: red !default;
 
 $accessibilityBorder: #9b3be5 !default;
@@ -32,6 +52,19 @@ $accessibilityBackground: #fef0cc !default;
   --colorSound: #{$colorSound};
   --colorSoundLight: #{$colorSoundLight};
   --bgColorMode: #{$bgColorMode};
+
+  // neo-ui-input
+  --inputBorderWidth: #{$inputBorderWidth};
+  --inputBorderRadius: #{$inputBorderRadius};
+  --inputBackgroundBase: #{$inputBackgroundBase};
+  --inputColorBase: #{$inputColorBase};
+  --inputTransition: #{$transitionSmall};
+
+  // neo-ui-button
+  --buttonBorderWidth: #{$buttonBorderWidth};
+  --buttonBorderRadius: #{$buttonBorderRadius};
+  --buttonBackgroundBase: #{$buttonBackgroundBase};
+  --buttonTransition: #{$transitionSmall};
 
   --accessibilityBorder: #{$accessibilityBorder};
   --accessibilityBackground: #{$accessibilityBackground};
