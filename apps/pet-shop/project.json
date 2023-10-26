@@ -33,6 +33,12 @@
               "maximumError": "200kb"
             }
           ],
+          "fileReplacements": [
+            {
+              "replace": "apps/pet-shop/src/environments/environment.ts",
+              "with": "apps/pet-shop/src/environments/environment.prod.ts"
+            }
+          ],
           "outputHashing": "all"
         },
         "development": {

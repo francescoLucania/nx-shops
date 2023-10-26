@@ -1,1 +1,188 @@
 /* You can add global styles to this file, and also import other style files */
+@forward 'node_modules/normalize.css/normalize';
+@forward 'assets/styles/fonts';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/accessibility/accessibility';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/palette/palette';
+@forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/resets/button' as button-reset;
+
+$colorBase: #2E4C6D !default;
+$colorLight: rgba($colorBase, 0.8) !default;
+$colorLighter: rgba($colorBase, 0.6) !default;
+$colorLightest: rgba($colorBase, 0.4) !default;
+
+$colorBrand: #396EB0 !default;
+$colorFade: rgba($colorBrand, 0.2) !default;
+$colorSound: #F875AA !default;
+$colorSoundLight: rgba($colorBrand, 0.6) !default;
+$bgColorMode: #DADDFC !default;
+
+$fontSizeSmall: 14px !default;
+$lineHeightSmall: 20px !default;
+
+$fontSizeBase: 16px !default;
+$lineHeightBase: 24px !default;
+
+$fontSizeLarge: 18px !default;
+$lineHeightLarge: 32px !default;
+
+$borderRadiusSmall: 0;
+$borderRadiusBase: 2px;
+$borderRadiusLarge: 4px;
+
+$transitionSmall: .2s;
+$transitionBase: .4s;
+$transitionLarge: .8s;
+
+// neo-ui-input
+$inputBorderWidth: 1px;
+$inputBorderRadius: 0;
+$inputBackgroundBase: #fff;
+$inputColorBase: #fff;
+
+// neo-ui-button
+$buttonBorderWidth: 3px;
+$buttonBorderRadius: 0;
+$buttonBackgroundBase: $colorBase;
+$buttonColorBase: #fff;
+
+$colorError: red !default;
+
+$accessibilityBorder: #9b3be5 !default;
+$accessibilityBackground: #fef0cc !default;
+
+:root {
+  --colorBase: #{$colorBase};
+  --colorLight: #{$colorLight};
+  --colorLighter: #{$colorLighter};
+  --colorLightest: #{$colorLightest};
+
+  --colorBrand: #{$colorBrand};
+  --colorFade: #{$colorFade};
+  --colorSound: #{$colorSound};
+  --colorSoundLight: #{$colorSoundLight};
+  --bgColorMode: #{$bgColorMode};
+
+  --fontSizeSmall: #{$fontSizeSmall};
+  --lineHeightSmall: #{$lineHeightSmall};
+
+  --fontSizeBase: #{$fontSizeBase};
+  --lineHeightBase: #{$lineHeightBase};
+
+  --fontSizeLarge: #{$fontSizeLarge};
+  --lineHeightLarge: #{$lineHeightLarge};
+
+  // neo-ui-input
+  --inputBorderWidth: #{$inputBorderWidth};
+  --inputBorderRadius: #{$inputBorderRadius};
+  --inputBackgroundBase: #{$inputBackgroundBase};
+  --inputColorBase: #{$inputColorBase};
+  --inputTransition: #{$transitionSmall};
+
+  // neo-ui-button
+  --buttonBorderWidth: #{$buttonBorderWidth};
+  --buttonBorderRadius: #{$buttonBorderRadius};
+  --buttonBackgroundBase: #{$buttonBackgroundBase};
+  --buttonTransition: #{$transitionSmall};
+
+  --accessibilityBorder: #{$accessibilityBorder};
+  --accessibilityBackground: #{$accessibilityBackground};
+
+  --colorError: #{$colorError};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  font-size: var(--fontSizeBase);
+  line-height: var(--lineHeightBase);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bgColorMode);
+  color: var(--colorBase);
+  font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+}
+body,
+bulletin-root {
+  min-height: 100vh;
+}
+
+bulletin-root {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+}
+
+bulletin-header {
+  grid-area: header;
+  height: content-box;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+}
+
+bulletin-footer {
+  grid-area: footer;
+  height: content-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  @include button-reset.reset-buttons-styles;
+  cursor: pointer;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+ul,
+ol {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+}

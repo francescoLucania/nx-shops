@@ -17,6 +17,15 @@ $colorSoundLight: rgba(#9280bc, 0.6) !default;
 $colorSound: #9280bc !default;
 $bgColorMode: #F9F8F3 !default;
 
+$fontSizeSmall: 14px !default;
+$lineHeightSmall: 20px !default;
+
+$fontSizeBase: 16px !default;
+$lineHeightBase: 24px !default;
+
+$fontSizeLarge: 18px !default;
+$lineHeightLarge: 32px !default;
+
 $borderRadiusSmall: 0;
 $borderRadiusBase: 2px;
 $borderRadiusLarge: 4px;
@@ -52,6 +61,15 @@ $accessibilityBackground: #fef0cc !default;
   --colorSound: #{$colorSound};
   --colorSoundLight: #{$colorSoundLight};
   --bgColorMode: #{$bgColorMode};
+
+  --fontSizeSmall: #{$fontSizeSmall};
+  --lineHeightSmall: #{$lineHeightSmall};
+
+  --fontSizeBase: #{$fontSizeBase};
+  --lineHeightBase: #{$lineHeightBase};
+
+  --fontSizeLarge: #{$fontSizeLarge};
+  --lineHeightLarge: #{$lineHeightLarge};
 
   // neo-ui-input
   --inputBorderWidth: #{$inputBorderWidth};
@@ -130,4 +148,9 @@ ol {
   margin-inline-start: 0;
   margin-inline-end: 0;
   padding-inline-start: 0;
+}
+
+input {
+  margin: 0;
+  padding: 0;
 }

@@ -1,0 +1,7 @@
+<div class="popular">
+  <div class="popular__grid">
+    <div class="popular__grid-col" *ngFor="let item of popular">
+      <pet-shop-card [product]="item"></pet-shop-card>
+    </div>
+  </div>
+</div>

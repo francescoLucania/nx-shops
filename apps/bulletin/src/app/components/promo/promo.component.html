@@ -1,0 +1,29 @@
+
+
+
+<div class="promo">
+  <div class="container">
+    <div class="promo__grid">
+      <div class="promo__front">
+        <a [routerLink]="'/'" class="promo__logo">
+          bulletin
+        </a>
+
+        <button type="button" class="promo__location text-base-large">
+          Москва
+        </button>
+      </div>
+
+      <div class="promo__search">
+        <div class="promo__search-input">
+          <neo-ui-input [placeholder]="'Поиск по объявлениям'" [size]="'large'" >
+          </neo-ui-input>
+        </div>
+        <div class="promo__search-button">
+          <neo-ui-button size="small" [fullWidth]="true"><b>Найти</b></neo-ui-button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

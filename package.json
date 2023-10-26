@@ -6,7 +6,9 @@
     "serve book-shop": "nx serve book-shop",
     "build book-shop": "nx build book-shop --base-href=/books/",
     "serve pet-shop": "nx serve pet-shop",
-    "build pet-shop": "nx build pet-shop --base-href=/petshop/"
+    "build pet-shop": "nx build pet-shop --base-href=/petshop/",
+    "serve bulletin": "nx serve bulletin",
+    "build bulletin": "nx build bulletin --base-href=/bulletin/"
   },
   "private": true,
   "dependencies": {

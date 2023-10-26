@@ -1,0 +1,46 @@
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__navigate">
+      <ul class="site-header__navigate-menu text-base-small">
+
+        <li>
+          <a href="#">Для бизнеса</a>
+        </li>
+
+        <li>
+          <a href="#">Вакансии</a>
+        </li>
+
+        <li>
+          <a href="#">Помощь</a>
+        </li>
+
+        <li>
+          <a href="#">Каталоги</a>
+        </li>
+
+        <li>
+          <a href="#">Польза</a>
+        </li>
+
+      </ul>
+
+      <ng-container *ngIf="(user$ | async) as user; else userMenu">
+        <neo-ui-button
+          [size]="'large'"
+          [routerLink]="'/user'"
+        >
+          <b>{{ user.name || user.id }}</b>
+        </neo-ui-button>
+      </ng-container>
+      <ng-template #userMenu>
+        <neo-ui-button
+          [size]="'large'"
+          (click)="openLoginModal()"
+        >
+          <b>Войти</b>
+        </neo-ui-button>
+      </ng-template>
+    </div>
+  </div>
+</header>

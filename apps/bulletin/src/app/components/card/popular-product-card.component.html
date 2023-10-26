@@ -1,0 +1,13 @@
+<article class="product-card">
+  <header class="product-card__header">
+
+    <div class="product-card__image">
+      <img [src]="product.src" [alt]="product.title">
+    </div>
+
+    <h4 class="product-card__title heading-h6"><a href="#">{{product.title}}</a></h4>
+  </header>
+  <footer class="product-card__footer text-base-small">
+    {{product.location}}, {{product.time}}
+  </footer>
+</article>

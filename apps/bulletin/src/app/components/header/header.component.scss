@@ -1,0 +1,43 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+.site-header {
+  background: var(--colorBase);
+  color: #fff;
+
+  &__navigate {
+    display: flex;
+    justify-content: space-between;
+
+    @include theme.mq(sm) {
+      padding: 8px 0;
+    }
+
+    @include theme.mq(md) {
+      align-items: center;
+    }
+  }
+
+  &__navigate-menu {
+    @include theme.mq(md) {
+      display: flex;
+      margin: 0 -8px;
+    }
+
+    > li {
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      a,
+      button {
+        display: block;
+        padding: 8px 8px;
+        color: #fff;
+
+        &:hover {
+          color: var(--colorSound);
+        }
+      }
+    }
+  }
+}
