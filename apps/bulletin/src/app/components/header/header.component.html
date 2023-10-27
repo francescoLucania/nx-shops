@@ -25,22 +25,25 @@
 
       </ul>
 
-      <ng-container *ngIf="(user$ | async) as user; else userMenu">
-        <neo-ui-button
-          [size]="'large'"
-          [routerLink]="'/user'"
-        >
-          <b>{{ user.name || user.id }}</b>
-        </neo-ui-button>
-      </ng-container>
-      <ng-template #userMenu>
-        <neo-ui-button
-          [size]="'large'"
-          (click)="openLoginModal()"
-        >
-          <b>Войти</b>
-        </neo-ui-button>
-      </ng-template>
+      <div class="site-header__navigate-user-actions">
+        <ng-container *ngIf="(user$ | async) as user; else userMenu">
+          <neo-ui-button
+            [size]="'small'"
+            [routerLink]="'/user'"
+          >
+            <b>{{ user.name || user.id }}</b>
+          </neo-ui-button>
+        </ng-container>
+        <ng-template #userMenu>
+          <neo-ui-button
+            [size]="'small'"
+            (click)="openLoginModal()"
+          >
+            <b>Войти</b>
+          </neo-ui-button>
+        </ng-template>
+        <neo-ui-button [size]="'small'"><b>Разместить объявление</b></neo-ui-button>
+      </div>
     </div>
   </div>
 </header>

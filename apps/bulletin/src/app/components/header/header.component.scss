@@ -5,29 +5,26 @@
   color: #fff;
 
   &__navigate {
-    display: flex;
-    justify-content: space-between;
-
     @include theme.mq(sm) {
       padding: 8px 0;
     }
 
     @include theme.mq(md) {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
     }
   }
 
   &__navigate-menu {
-    @include theme.mq(md) {
-      display: flex;
-      margin: 0 -8px;
+    display: flex;
+    margin: 0 -8px;
+
+    @include theme.mq(sm) {
+      justify-content: center;
     }
 
     > li {
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-
       a,
       button {
         display: block;
@@ -38,6 +35,14 @@
           color: var(--colorSound);
         }
       }
+    }
+  }
+
+  &__navigate-user-actions {
+    display: flex;
+
+    @include theme.mq(sm) {
+      justify-content: center;
     }
   }
 }

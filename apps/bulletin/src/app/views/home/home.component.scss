@@ -1,0 +1,8 @@
+section {
+  &:first-child {
+    margin-top: 32px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 48px
+  }
+}

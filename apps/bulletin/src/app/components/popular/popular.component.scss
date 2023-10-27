@@ -17,12 +17,12 @@
     flex-direction: column;
 
     @include theme.mq(md) {
-      @include theme.grid-col-mx(calc(1/2));
+      @include theme.grid-col-mx(calc(1/4));
       margin-bottom: 24px;
     }
 
     @include theme.mq(lg) {
-      @include theme.grid-col-mx(calc(1/5));
+      @include theme.grid-col-mx(calc(1/7));
       margin-bottom: 24px;
     }
 
