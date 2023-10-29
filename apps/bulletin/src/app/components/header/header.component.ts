@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, Inject, Self} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {AuthUserComponent} from "../../../../../../lib/src/lib/components/abstract/auth-user/auth-user.component";
-import {ButtonModule} from "ngx-neo-ui";
+import {ButtonModule, ModalService} from "ngx-neo-ui";
 import {RouterModule} from "@angular/router";
+import {DestroyService, UserService} from "@nx-shops/lib";
 
 @Component({
   selector: 'bulletin-header',
@@ -10,5 +11,13 @@ import {RouterModule} from "@angular/router";
   imports: [CommonModule, ButtonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  providers: [DestroyService]
 })
-export class HeaderComponent extends AuthUserComponent{}
+export class HeaderComponent extends AuthUserComponent{
+  constructor(
+    userService: UserService,
+    modalService: ModalService,
+  ) {
+    super(userService, modalService);
+  }
+}

@@ -5,14 +5,8 @@ import {BaseModalComponent, ModalService} from "ngx-neo-ui";
 
 export const ageRatingGuard: CanActivateFn = (route, state) => {
 
-  console.log('route', route)
-  console.log('state', state)
-
   const userService: UserService = inject(UserService);
   const modalService: ModalService = inject(ModalService);
-
-  console.log('route.queryParams[\'ageRating\']', route.queryParams['ageRating'])
-
   if (Number(route.queryParams['ageRestriction'])) {
     const userAge = userService.userAge ? Number(userService.userAge) : undefined;
     if (userAge && userAge >= route.queryParams['ageRestriction']) {

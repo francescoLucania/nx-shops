@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Inject, Self} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {AuthUserComponent} from "../../../../../../lib/src/lib/components/abstract/auth-user/auth-user.component";

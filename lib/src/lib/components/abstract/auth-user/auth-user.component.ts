@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {distinctUntilChanged, Observable, tap} from "rxjs";
-import {IAuthMethod, IUser, LoginModalComponent, UserService} from "@nx-shops/lib";
+import {Component, Inject, OnInit, Self} from '@angular/core';
+import {distinctUntilChanged, Observable, takeUntil, tap} from "rxjs";
+import {DestroyService, IAuthMethod, IUser, LoginModalComponent, UserService} from "@nx-shops/lib";
 import {ModalService} from "ngx-neo-ui";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
