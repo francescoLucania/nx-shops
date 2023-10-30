@@ -15,9 +15,6 @@ export class HomePromoComponent implements OnInit {
     const scrollContent = (document as any).querySelector(".promo__content");
     scrollContainer?.addEventListener("wheel", (evt: any) => {
       (scrollContainer as any).scrollLeft += evt.deltaY;
-      if (scrollContent.offsetWidth - scrollContainer.offsetWidth !== (scrollContainer as any).scrollLeft) {
-        evt?.preventDefault();
-      }
     });
 
   }
