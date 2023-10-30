@@ -4,6 +4,7 @@ import {ButtonModule, ModalModule, ModalService} from "ngx-neo-ui";
 import {Observable} from "rxjs";
 import {IAuthMethod, IUser, LoginModalComponent, UserService} from "@nx-shops/lib";
 import {RouterModule} from "@angular/router";
+import {AuthUserComponent} from "../../../../../../lib/src/lib/components/abstract/auth-user/auth-user.component";
 
 @Component({
   selector: 'book-shop-header',
@@ -13,21 +14,11 @@ import {RouterModule} from "@angular/router";
   styleUrls: ['./header.component.scss'],
 })
 
-export class HeaderComponent {
-
-  public user$: Observable<null | IUser> = this.userService.user$;
-  public authMethods$: Observable<null | IAuthMethod[]> = this.userService.authMethods$;
-
+export class HeaderComponent extends AuthUserComponent {
   constructor(
-    private modalService: ModalService,
-    private userService: UserService
+    userService: UserService,
+    modalService: ModalService,
   ) {
-  }
-
-  public openLoginModal() {
-    this.modalService.open(LoginModalComponent, undefined, {
-      title: '<span class="color-brand">Войти</span>',
-      authMethods: this.userService.authMethods
-    });
+    super(userService, modalService);
   }
 }

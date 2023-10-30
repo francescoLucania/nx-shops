@@ -5,6 +5,7 @@
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/palette/palette';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
 
 $colorBase: #121314 !default;
 $colorLight: rgba(#121314, 0.8) !default;
@@ -221,4 +222,22 @@ ol {
 input {
   margin: 0;
   padding: 0;
+}
+
+.actions {
+  @include theme.mq(md) {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include theme.mq(sm) {
+        margin-bottom: 8px;
+      }
+      @include theme.mq(md) {
+        margin-right: 16px;
+      }
+    }
+  }
 }

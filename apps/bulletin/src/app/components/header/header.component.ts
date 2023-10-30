@@ -13,7 +13,7 @@ import {DestroyService, UserService} from "@nx-shops/lib";
   styleUrls: ['./header.component.scss'],
   providers: [DestroyService]
 })
-export class HeaderComponent extends AuthUserComponent{
+export class HeaderComponent extends AuthUserComponent {
   constructor(
     userService: UserService,
     modalService: ModalService,

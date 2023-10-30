@@ -7,5 +7,12 @@
   </ng-container>
   <ng-template #error>
     <h5 class="heading-h6"><span class="color-brand">=(</span> Сервис не отвечает, попробуйте позже</h5>
+    <div class="actions mt-24">
+      <div class="action__item">
+        <neo-ui-button [theme]="'brand'" (click)="closeModal()">
+          Закрыть
+        </neo-ui-button>
+      </div>
+    </div>
   </ng-template>
 </div>

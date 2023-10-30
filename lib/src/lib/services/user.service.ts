@@ -78,10 +78,9 @@ export class UserService {
   }
 
   public getUser(): Observable<IUser | null> {
-    // return this.http.get<IUser>(`${this.apiBaseUrl}api/user`)
-    return this.http.get('./assets/data/user.json')
+    return this.http.get<IUser>(`${this.apiBaseUrl}api/user`)
       .pipe(
-        map((data: any) => {
+        map((data: IUser) => {
           const value = data?.id ? data : null;
           this._user$.next(value);
           return value;

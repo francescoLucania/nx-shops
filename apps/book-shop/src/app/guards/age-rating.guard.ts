@@ -1,7 +1,8 @@
 import { CanActivateFn } from '@angular/router';
 import {LoginModalComponent, UserService} from "@nx-shops/lib";
 import {inject} from "@angular/core";
-import {BaseModalComponent, ModalService} from "ngx-neo-ui";
+import {ModalService} from "ngx-neo-ui";
+import {InfoModalComponent} from "../../../../../lib/src/lib/components/info-modal/info-modal.component";
 
 export const ageRatingGuard: CanActivateFn = (route, state) => {
 
@@ -12,7 +13,7 @@ export const ageRatingGuard: CanActivateFn = (route, state) => {
     if (userAge && userAge >= route.queryParams['ageRestriction']) {
       return true;
     } else if (userService.isLoggedIn) {
-      modalService.open(BaseModalComponent, undefined, {
+      modalService.open(InfoModalComponent, undefined, {
         title: 'Контент имеет возрастное ограничение',
       });
     } else {

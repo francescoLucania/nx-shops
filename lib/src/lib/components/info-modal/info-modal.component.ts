@@ -1,21 +1,19 @@
 import {Component, Input} from '@angular/core';
-import {IAuthMethod} from "@nx-shops/lib";
 import {ButtonModule, ModalService} from "ngx-neo-ui";
 import {CommonModule} from "@angular/common";
 
 @Component({
+  selector: 'shops-lib-info-modal',
+  templateUrl: './info-modal.component.html',
+  styleUrls: ['./info-modal.component.scss'],
   standalone: true,
   imports: [CommonModule, ButtonModule],
-  selector: 'shops-lib-login-modal',
-  templateUrl: './login-modal.component.html',
-  styleUrls: ['./login-modal.component.scss'],
 })
-export class LoginModalComponent {
-  @Input() public title: string;
-  @Input() public authMethods: null | IAuthMethod[];
 
-  constructor(private modalService: ModalService) {
-  }
+export class InfoModalComponent {
+  @Input() public title: string;
+
+  constructor(private modalService: ModalService) {}
 
   public closeModal(): void {
     this.modalService.close();
